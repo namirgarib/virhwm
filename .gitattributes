@@ -1,3 +1,4 @@
-CMakeLists.txt linguist-generated
 *.make linguist-generated
 *.cmake linguist-generated
+CMakeLists.txt linguist-generated
+diagram.png linguist-generated
