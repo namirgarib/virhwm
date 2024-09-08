@@ -1,0 +1,7 @@
+# ninja log v6
+6	449	1725793738156291797	CMakeFiles/virtual_hardware_m.dir/src/gui.cpp.o	e3b3ed99364c47aa
+7	836	1725722303174847502	CMakeFiles/virtual_hardware_m.dir/logic.cpp.o	f19f5a6a08124cca
+5	442	1725795970763784912	CMakeFiles/virtual_hardware_m.dir/src/virhwm.cpp.o	b10cb4bfc3f84c07
+2	55	1725797376922919461	build.ninja	b75ac94be65694a8
+2	9	1725722302892027794	clean	ad90e366ad70d77b
+442	476	1725795971200884745	virtual_hardware_m	1f68d4dd324a8dd0
