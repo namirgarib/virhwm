@@ -1,0 +1,3 @@
+CMakeLists.txt linguist-generated
+*.make linguist-generated
+*.cmake linguist-generated
