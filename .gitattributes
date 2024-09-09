@@ -1,3 +1,4 @@
+Makefile linguist-vendored
 Makefile linguist-language-ignore
 *.mk linguist-language-ignore
 CMakeLists.txt linguist-language-ignore
