@@ -1,4 +1,9 @@
+# Mark Makefile-related files as vendored
 Makefile linguist-vendored
 Makefile linguist-language-ignore
 *.mk linguist-language-ignore
 CMakeLists.txt linguist-language-ignore
+
+# Ignore CMake build directories
+cmake-build-debug/* linguist-vendored
+cmake-build-release/* linguist-vendored
