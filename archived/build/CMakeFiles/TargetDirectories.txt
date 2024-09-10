@@ -1,3 +1,0 @@
-/Users/namirgarib/Desktop/nithc/E5/computer architecture/44garib-a/build/CMakeFiles/simulator.dir
-/Users/namirgarib/Desktop/nithc/E5/computer architecture/44garib-a/build/CMakeFiles/edit_cache.dir
-/Users/namirgarib/Desktop/nithc/E5/computer architecture/44garib-a/build/CMakeFiles/rebuild_cache.dir

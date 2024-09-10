@@ -1,6 +1,0 @@
-# ninja log v6
-1	6	1725722303012636326	clean	ad90e366ad70d77b
-2	797	1725722304269962990	CMakeFiles/virtual_hardware_m.dir/gui.cpp.o	48ee02ff718b9edd
-1	804	1725722304269800534	CMakeFiles/virtual_hardware_m.dir/graphics.cpp.o	40ba3f2fd3089d04
-1	794	1725722304269445330	CMakeFiles/virtual_hardware_m.dir/logic.cpp.o	4b858b27f8cb7446
-804	893	1725722305072512069	virtual_hardware_m	d1c1cf26adfdfd9e
