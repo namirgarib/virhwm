@@ -1,0 +1,29 @@
+PC = 1                      ma1_sel, ma1_reg, databus, pm_output
+
+PC = 2                      pm_output, databus, ma2_reg
+
+PC = 3 loop_reg = 8         loop_reg(red),pm_output, bbus
+
+PC = 4 loop_reg = 8         loop_reg(red)pm_output, alu, bbus
+
+PC = 4 loop_reg = 7         loop_reg(red), ma1_reg, address1, address2, data_mem, data_mem_to_md1, data_mem_to_md2, md1_sel, md1_reg, md2_sel, md2_reg, bbus, mpy, md1_reg_to_mpy, md2_reg_to_mpy
+
+PC = 4 loop_reg = 6         loop_reg(red), ma1_reg, address1, address2, data_mem, data_mem_to_md1, data_mem_to_md2, md1_sel, md1_reg, md2_sel, md2_reg, bbus, mpy, md1_reg_to_mpy, md2_reg_to_mpy
+
+PC = 4 loop_reg = 5         loop_reg(red), ma1_reg, address1, address2, data_mem, data_mem_to_md1, data_mem_to_md2, md1_sel, md1_reg, md2_sel, md2_reg, bbus, mpy, md1_reg_to_mpy, md2_reg_to_mpy
+
+PC = 4 loop_reg = 4         loop_reg(red), ma1_reg, address1, address2, data_mem, data_mem_to_md1, data_mem_to_md2, md1_sel, md1_reg, md2_sel, md2_reg, bbus, mpy, md1_reg_to_mpy, md2_reg_to_mpy
+
+PC = 4 loop_reg = 3         loop_reg(red), ma1_reg, address1, address2, data_mem, data_mem_to_md1, data_mem_to_md2, md1_sel, md1_reg, md2_sel, md2_reg, bbus, mpy, md1_reg_to_mpy, md2_reg_to_mpy
+
+PC = 4 loop_reg = 2         loop_reg(red), ma1_reg, address1, address2, data_mem, data_mem_to_md1, data_mem_to_md2, md1_sel, md1_reg, md2_sel, md2_reg, bbus, mpy, md1_reg_to_mpy, md2_reg_to_mpy
+
+PC = 4 loop_reg = 1         loop_reg(red), ma1_reg, address1, address2, data_mem, data_mem_to_md1, data_mem_to_md2, md1_sel, md1_reg, md2_sel, md2_reg, bbus, mpy, md1_reg_to_mpy, md2_reg_to_mpy
+
+PC = 5 loop_reg = 0         alu, alu_output, md1_sel, md1_reg
+
+PC = 6                      ma1_sel, ma1_reg, databus, pm_output
+
+PC = 7                      md1_reg, md1_to_data_mem, data_mem
+
+PC = 8                      EXIT
