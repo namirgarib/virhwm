@@ -63,20 +63,6 @@ build CMakeFiles/virtual_hardware_m.dir/src/gui.cpp.o: CXX_COMPILER__virtual_har
   OBJECT_DIR = CMakeFiles/virtual_hardware_m.dir
   OBJECT_FILE_DIR = CMakeFiles/virtual_hardware_m.dir/src
 
-build CMakeFiles/virtual_hardware_m.dir/virhwe_.c.o: C_COMPILER__virtual_hardware_m_unscanned_Release /Users/namirgarib/Desktop/Programming/cpp_programing/virtual-hardware-m/virhwe_.c || cmake_object_order_depends_target_virtual_hardware_m
-  DEP_FILE = CMakeFiles/virtual_hardware_m.dir/virhwe_.c.o.d
-  FLAGS = -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/namirgarib/Desktop/Programming/cpp_programing/virtual-hardware-m/include
-  OBJECT_DIR = CMakeFiles/virtual_hardware_m.dir
-  OBJECT_FILE_DIR = CMakeFiles/virtual_hardware_m.dir
-
-build CMakeFiles/virtual_hardware_m.dir/virhwm_.c.o: C_COMPILER__virtual_hardware_m_unscanned_Release /Users/namirgarib/Desktop/Programming/cpp_programing/virtual-hardware-m/virhwm_.c || cmake_object_order_depends_target_virtual_hardware_m
-  DEP_FILE = CMakeFiles/virtual_hardware_m.dir/virhwm_.c.o.d
-  FLAGS = -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/namirgarib/Desktop/Programming/cpp_programing/virtual-hardware-m/include
-  OBJECT_DIR = CMakeFiles/virtual_hardware_m.dir
-  OBJECT_FILE_DIR = CMakeFiles/virtual_hardware_m.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target virtual_hardware_m
@@ -85,7 +71,7 @@ build CMakeFiles/virtual_hardware_m.dir/virhwm_.c.o: C_COMPILER__virtual_hardwar
 #############################################
 # Link the executable virtual_hardware_m
 
-build virtual_hardware_m: CXX_EXECUTABLE_LINKER__virtual_hardware_m_Release CMakeFiles/virtual_hardware_m.dir/src/virhwm.cpp.o CMakeFiles/virtual_hardware_m.dir/src/gui.cpp.o CMakeFiles/virtual_hardware_m.dir/virhwe_.c.o CMakeFiles/virtual_hardware_m.dir/virhwm_.c.o
+build virtual_hardware_m: CXX_EXECUTABLE_LINKER__virtual_hardware_m_Release CMakeFiles/virtual_hardware_m.dir/src/virhwm.cpp.o CMakeFiles/virtual_hardware_m.dir/src/gui.cpp.o
   FLAGS = -O3 -DNDEBUG -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk
   OBJECT_DIR = CMakeFiles/virtual_hardware_m.dir
   POST_BUILD = :

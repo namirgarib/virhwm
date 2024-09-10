@@ -7,3 +7,4 @@ CMakeLists.txt linguist-language-ignore
 # Ignore CMake build directories
 cmake-build-debug/* linguist-vendored
 cmake-build-release/* linguist-vendored
+archived/* linguist-vendored

@@ -25,7 +25,7 @@ MIP mip[] = {
 
 
 // Global variables
-short memory[nmax] = {0}; // MEMORY ARRAY
+short memory[nmax]; // MEMORY ARRAY
 short pc = 0;
 short a_reg = 0;
 short ma1_reg = 0;
@@ -149,12 +149,13 @@ void microprogramLoop() {
     while (1) {
         MIP now = mip[pc];  // Fetch microinstruction
 
+        // CHECK FOR STOP FLAG STATUS
         if (now.stp != 0) {
             std::cout << "Program end" << std::endl;
             break;
         }
 
-        // Handle MA1 register
+        // MA1 REGISTER CONTROL
         if (now.MA1l == 1) {
             if (now.MA1i == 1) {
                 ma1_reg = C;
@@ -166,7 +167,7 @@ void microprogramLoop() {
             ma1_reg++;
         }
 
-        // Handle MA2 register
+        // MA2 REGISTER CONTROL
         if (now.MA2l == 1 && now.Deo == 0) {
             ma2_reg = now.emit;
         }
@@ -174,7 +175,7 @@ void microprogramLoop() {
             ma2_reg++;
         }
 
-        // Memory read
+        // MEMORY READ
         if (now.MD1l == 1) {
             if (now.MD1i == 0 && now.r_w == 1 && now.memo == 0) {
                 if (ma1_reg < nmax && ma1_reg >= 0) {
@@ -190,17 +191,47 @@ void microprogramLoop() {
             }
         }
 
-        // Memory write
-        if (now.r_w == 0 && now.memo == 0) {
-            if (now.MMD1o == 0 && ma1_reg < nmax && ma1_reg >= 0) {
-                mem[ma1_reg] = md1_reg;
+        if (now.MD2l == 1) {
+            // Memory read from address stored in ma2_reg
+            if (now.MD2i == 0 && now.r_w == 1 && now.memo == 0) {
+                if (ma2_reg >= 0 && ma2_reg < nmax) {
+                    md2_reg = mem[ma2_reg];
+                } else {
+                    std::cerr << "Memory read error: out of memory range" << std::endl;
+                    exit(EXIT_FAILURE);
+                }
             }
-            if (now.MMD2o == 0 && ma2_reg < nmax && ma2_reg >= 0) {
-                mem[ma2_reg] = md2_reg;
+            // Immediate value load into md2_reg
+            else if (now.MD2i == 1 && now.Deo == 0) {
+                md2_reg = now.emit;
             }
         }
 
-        // A-bus control
+        // MEMORY WRITE -------------------------------------------------------
+        if (now.r_w == 0 && now.memo == 0) {
+            // Write md1_reg to memory at address pointed by ma1_reg
+            if (now.MMD1o == 0) {
+                if (ma1_reg >= 0 && ma1_reg < nmax) {
+                    mem[ma1_reg] = md1_reg;
+                } else {
+                    std::cerr << "Memory write error: out of memory range (ma1_reg)" << std::endl;
+                    exit(EXIT_FAILURE);
+                }
+            }
+
+            // Write md2_reg to memory at address pointed by ma2_reg
+            if (now.MMD2o == 0) {
+                if (ma2_reg >= 0 && ma2_reg < nmax) {
+                    mem[ma2_reg] = md2_reg;
+                } else {
+                    std::cerr << "Memory write error: out of memory range (ma2_reg)" << std::endl;
+                    exit(EXIT_FAILURE);
+                }
+            }
+        }
+        // -----------------------------------------------------------------------------------------
+
+        // A-BUS CONTROL
         if ((now.Ao + now.MA1o + now.A1o + now.A0o + now.Byo) < 4) {
             std::cerr << "A-bus conflict error" << std::endl;
             exit(0);
@@ -221,7 +252,7 @@ void microprogramLoop() {
         // MPY
         D = mpy(md1_reg, md2_reg);
 
-        // B-bus control
+        // B-BUS CONTROL
         if ((now.BMD1o + now.BMPYo + now.Beo) < 2) {
             std::cerr << "B-bus conflict error" << std::endl;
             exit(0);
@@ -235,39 +266,45 @@ void microprogramLoop() {
             B = now.emit;
         }
 
-        // Latch control
-        if (now.Al == 1) {
-            a_reg = C;
-        }
+        // LATCH CONTROL
+        if(now.Al == 1) a_reg = C;
+        if(now.MD1l == 1 && now.MD1i == 1 && now.Deo == 0) md1_reg = now.emit;
+        if(now.Lpl == 1 && now.Beo == 0) loop_reg = now.emit;
+        if(now.Lpc == 1) loop_reg--;
 
-        // ALU operation
+        // BRANCH CONDITION
+        if((now.ovf == 1 && ovf == true) || (now.zf == 1 && zf ==true) || (now.mf == 1 && mf == true) || (now.ncld == 1)) {
+            jump = true;
+        } else jump = false;
+
+        // BRANCH CONTROL
+        if (jump) {
+            if (now.emit >= p_max) {
+                std::cerr << "Exceeded limit of cycles. Program crash!" << std::endl;
+                std::exit(0);
+            }
+            pc = now.emit;
+        } else if (now.Lpc == 1 && loop_reg != 0) {}
+        else pc++;
+
+        // ALU
+        pre_ovf = ovf;
+        pre_zf = zf;
+        pre_mf = mf;
+
         Result result = falu(now.alu, A, B);
         C = result.C;
         ovf = result.ovf;
         zf = result.z;
         mf = result.m;
 
-        // Check loop register limits
-        if (now.Lpc == 1 && loop_reg >= l_max) {
-            std::cerr << "Out of range for loop register" << std::endl;
-            exit(0);
+
+        // PIPELINE REGISTER RANGE
+        if(now.Lpc == 1 && loop_reg >= l_max) {
+            std::cout << "Loop register is out of range!" << std::endl;
+            std::exit(0);
         }
 
-        // Branch control
-        if (jump) {
-            if (now.emit >= p_max) {
-                std::cerr << "Program crash" << std::endl;
-                exit(0);
-            } else {
-                pc = now.emit;
-            }
-        } else {
-            if (now.Lpc == 1 && loop_reg != 0) {
-                pc = pc;
-            } else {
-                pc++;
-            }
-        }
 
         // Print memory contents and program state after each step
         printf("PC: %d\n", pc);

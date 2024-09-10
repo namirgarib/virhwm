@@ -22,7 +22,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2399e7e3-2e45-43ff-9ce4-bad163459175" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-96d36e4ccc1465b6097d.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2024-09-08T12-09-36-0935.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-virtual_hardware_m-Debug-e08f0598c2262f2db366.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/virtual_hardware_m" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/virtual_hardware_m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-release/.cmake/api/v1/reply/codemodel-v2-0388f6632bcd53c44cce.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-release/.cmake/api/v1/reply/index-2024-09-08T12-09-36-0932.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-release/.cmake/api/v1/reply/target-virtual_hardware_m-Release-9f2849d4414d86136939.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/rules.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-release/CMakeFiles/rules.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-release/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-release/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/virhwm.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/virhwm.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +55,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file:///Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/usr/include/c++/v1/iostream" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/archived/virhwe_.c" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/archived/virhwm_.c" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/include/gui.h" root0="SKIP_HIGHLIGHTING" />
@@ -89,6 +108,11 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="virtual_harware_m" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="VIRHWM" TARGET_NAME="virtual_hardware_m" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="VIRHWM" RUN_TARGET_NAME="virtual_hardware_m">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -106,6 +130,7 @@
       <workItem from="1725718116314" duration="2963000" />
       <workItem from="1725721115712" duration="20152000" />
       <workItem from="1725864041184" duration="31000" />
+      <workItem from="1725867205666" duration="11604000" />
     </task>
     <servers />
   </component>
