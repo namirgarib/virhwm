@@ -1,5 +1,5 @@
 # Virtual Hardware Microprogram
-🚨 **The rewrite of this project is not finished. If you wish to use it with Qt and OpenCV simulation, please use the archived code from the old project in the `archived` folder. 🚨
+🚨 **The rewrite of this project is not finished. If you wish to use it with Qt and OpenCV simulation, please use the archived code from the old project in the `archived` folder.** 🚨
 This project is a rewrite of a personal project I created a few months ago. The original version had some sloppy code, and I am now rewriting it to make the code more readable, modular, and maintainable.
 
 ## Overview
